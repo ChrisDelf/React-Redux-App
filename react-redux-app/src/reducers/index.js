@@ -1,3 +1,3 @@
-export { reducer } from './foxListReducer';
+export { reducer } from './dogListReducer';
 
 

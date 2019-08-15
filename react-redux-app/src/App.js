@@ -1,13 +1,13 @@
 import React from 'react';
 
 import './App.css';
-import FoxList from './components/FoxList';
+import DogList from './components/DogList';
 
 function App() {
   return (
     <div className="App">
     Hello
-    <FoxList />
+    <DogList />
     </div>
   );
 }
