@@ -7,19 +7,19 @@ import Dog from './Dog';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import SavedDogs from './SavedDogs';
 const useStyles = makeStyles(theme => ({
   button: {
     backgroundColor: 'lightblue'
-
-
-  },
-}))
+  }
+}));
 const DogList = props => {
+  const classes = useStyles();
   console.log('Props', props.images);
   return (
     <>
       <h1>Click here for some Doggos</h1>
-      <Button onClick={props.getData}>
+      <Button className={classes.button} onClick={props.getData}>
         {props.isLoading ? (
           <ReactLoading type="cubes" color="green" />
         ) : (
@@ -27,10 +27,12 @@ const DogList = props => {
         )}
       </Button>
       {props.initialImage &&
-          props.images.map(dog => <Dog key={dog.url} image={dog} />)}
-    <ul>{props.addedDogs.map(link => <a herf = {link}> {link}
+        props.images.map(dog => <Dog key={dog.url} image={dog} />)}
 
-      </a>)}</ul>
+    {props.addedDogs.map(link => (<SavedDogs key = {link} savedDog = {link}/>
+
+        ))}
+
     </>
   );
 };
