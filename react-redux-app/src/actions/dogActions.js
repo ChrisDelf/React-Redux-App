@@ -14,7 +14,7 @@ export const getData = () => {
     axios
       .get(`https://random.dog/woof.json`)
       .then(res => {
-        console.log("Response", res)
+        console.log("Response", res.data)
         dispatch({ type: FETCH_DOG_DATA_SUCCESS, payload: res.data.url });
       })
       .catch(err => {
